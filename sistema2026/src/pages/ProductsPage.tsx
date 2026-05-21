@@ -11,7 +11,7 @@ const products: ProductType[] = [
     description: "Producto de ejemplo",
     price: 10000,
     imagenUrl: "/src/assets/logo-placeholder.svg",
-     category: "",
+    category: "Ropa",
     stock: 8
   },
 ];
