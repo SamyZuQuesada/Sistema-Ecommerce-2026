@@ -9,6 +9,7 @@ const products: ProductType[] = [
     id: 1,
     name: "Camisa básica",
     description: "Producto de ejemplo",
+    category: "Ropa",
     price: 10000,
     imagenUrl: "/src/assets/logo-placeholder.svg",
     stock: 8,
