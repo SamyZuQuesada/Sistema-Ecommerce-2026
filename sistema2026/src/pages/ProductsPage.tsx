@@ -1,43 +1,32 @@
-
+import { Link } from "react-router-dom";
 import { ProductCard } from "../components/ProductCard";
-import { ProductTable } from "../components/ProductTablet";
+import { ProductTable } from "../components/ProductTable";
+import { ROUTES } from "../constants/routesConstants";
 import type { ProductType } from "../types/productType";
 
 const products: ProductType[] = [
   {
     id: 1,
     name: "Camisa básica",
-    description: "Producto de ejemplo para catálogo.",
+    description: "Producto de ejemplo",
     price: 10000,
     imagenUrl: "/src/assets/logo-placeholder.svg",
     stock: 8,
-  },
-  {
-    id: 2,
-    name: "Pantalón casual",
-    description: "Producto de ejemplo para catálogo.",
-    price: 15000,
-    imagenUrl: "/src/assets/logo-placeholder.svg",
-    stock: 4,
   },
 ];
 
 export function ProductsPage() {
   return (
     <main>
-      <section>
-        <h1>Productos</h1>
-      </section>
+      <h1>Productos</h1>
 
-      <section>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </section>
+      {products.map((product) => (
+        <ProductCard key={product.id} product={product} />
+      ))}
 
-      <section>
-        <ProductTable products={products} />
-      </section>
+      <ProductTable products={products} />
+
+      <Link to={ROUTES.cart}>Ir al carrito</Link>
     </main>
   );
 }
