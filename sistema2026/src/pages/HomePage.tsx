@@ -1,31 +1,18 @@
+import { Link } from "react-router-dom";
 import { Button } from "../components/Button";
-import { ProductCard } from "../components/ProductCard";
-import type { ProductType } from "../types/productType";
-
-const featuredProduct: ProductType = {
-  id: 1,
-  name: "Producto destacado",
-  description: "Producto principal del catálogo.",
-  price: 10000,
-  imagenUrl: "/src/assets/logo-placeholder.svg",
-  stock: 5,
-};
 
 export function HomePage() {
   return (
     <main>
-      <section>
-        <h1>E-commerce</h1>
+      <h1>E-commerce</h1>
 
+      <Link to="/products">
         <Button>Ver productos</Button>
+      </Link>
+
+      <Link to="/cart">
         <Button>Ver carrito</Button>
-      </section>
-
-      <section>
-        <h2>Producto destacado</h2>
-
-        <ProductCard product={featuredProduct} />
-      </section>
+      </Link>
     </main>
   );
 }
